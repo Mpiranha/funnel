@@ -2,11 +2,11 @@ $flaticon-font: "flaticon";
 
 @font-face {
     font-family: $flaticon-font;
-    src: url("./flaticon.ttf?1664b21a1428d5a8c63f5d2a519b1fd3") format("truetype"),
-url("./flaticon.woff?1664b21a1428d5a8c63f5d2a519b1fd3") format("woff"),
-url("./flaticon.woff2?1664b21a1428d5a8c63f5d2a519b1fd3") format("woff2"),
-url("./flaticon.eot?1664b21a1428d5a8c63f5d2a519b1fd3#iefix") format("embedded-opentype"),
-url("./flaticon.svg?1664b21a1428d5a8c63f5d2a519b1fd3#flaticon") format("svg");
+    src: url("./flaticon.ttf?1cd0672fd41efb8fdcf4287455b96d12") format("truetype"),
+url("./flaticon.woff?1cd0672fd41efb8fdcf4287455b96d12") format("woff"),
+url("./flaticon.woff2?1cd0672fd41efb8fdcf4287455b96d12") format("woff2"),
+url("./flaticon.eot?1cd0672fd41efb8fdcf4287455b96d12#iefix") format("embedded-opentype"),
+url("./flaticon.svg?1cd0672fd41efb8fdcf4287455b96d12#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -50,6 +50,8 @@ $flaticon-map: (
     "open-book": "\f11b",
     "check-mark": "\f11c",
     "workspace": "\f11d",
+    "cancel": "\f11e",
+    "left-arrow": "\f11f",
 );
 
 .flaticon-dashboard:before {
@@ -138,4 +140,10 @@ $flaticon-map: (
 }
 .flaticon-workspace:before {
     content: map-get($flaticon-map, "workspace");
+}
+.flaticon-cancel:before {
+    content: map-get($flaticon-map, "cancel");
+}
+.flaticon-left-arrow:before {
+    content: map-get($flaticon-map, "left-arrow");
 }

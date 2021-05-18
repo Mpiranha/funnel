@@ -407,3 +407,402 @@
     border-radius: 0.2rem;
     padding: 0.35rem 0.7rem;
 }
+
+.content-wrap {
+    border: 2px solid #898989;
+    border-radius: 0.4rem;
+    margin-top: 2rem;
+    background-color: #f9f9f9;
+}
+
+.content-head {
+    display: flex;
+    margin: 1.5rem;
+}
+
+.content-head .left-section .title {
+    font-size: 0.8rem;
+    font-weight: bold;
+    color: #706f6f;
+}
+
+
+.content-head .left-section .desc {
+    font-size: 0.6rem;
+    margin-top: -9px;
+}
+
+.content-head .btn-flex {
+    display: flex;
+}
+
+.btn-flex .btn {
+    font-size: 0.7rem;
+    color: #000;
+}
+
+
+
+.btn-flex .btn:focus {
+    box-shadow: none;
+}
+
+.btn-create-ecover {
+    border-radius: 0 0.3rem 0.3rem 0;
+    background-color: #bebdd1;
+}
+
+.btn-setup-api,
+.btn-purple-trans,
+.btn-find {
+    background: linear-gradient(to right, #5870fb, #8866fd);
+    border-radius: 0.3rem 0 0 0.3rem;
+}
+
+.btn-setup-api~.dropdown .dropdown-item {
+    font-size: 0.7rem;
+}
+
+.btn-setup-api~.dropdown .dropdown-menu {
+    transform: translate3d(-15px, 30px, 0px) !important;
+    min-width: 8rem;
+}
+
+.table-ecover thead tr {
+    border-bottom: 2px solid #acacac;
+}
+
+.no-border thead th,
+.no-border tbody td {
+    border: none !important;
+}
+
+.table-ecover thead th {
+    font-size: 0.45rem;
+    color: #a3a2a2;
+    text-align: center;
+    padding: 0.4rem .75rem;
+}
+
+.slide-in-wrap {
+    display: none;
+    background-color: #ffffff;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    width: 66%;
+    min-width: 66vw;
+    height: calc(100% - 60px);
+    padding: 1.5rem;
+    animation: appear 0.5s 1 linear;
+}
+
+.slide-in-inner {
+    padding: 0 1.5rem;
+}
+
+.slide-head {
+    display: flex;
+    align-items: center;
+}
+
+.slide-head .slide-details {
+    display: flex;
+    align-items: center;
+}
+
+.slide-head .slide-details .title {
+    font-size: 0.9rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.slide-head .slide-details .sub-title {
+    font-size: 0.9rem;
+    margin-left: 3rem;
+    display: flex;
+    font-weight: bold;
+}
+
+.slide-head .slide-details .sub-title::before {
+    content: "";
+    background-color: #7af3aa;
+    width: 0.7rem;
+    height: 0.7rem;
+    display: block;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin: 0 0.2rem 0.3rem 0;
+}
+
+.slide-head .btn-close {
+    margin-left: auto;
+}
+
+.slide-head .btn-close i::before {
+    font-size: 0.8rem;
+}
+
+.input-bordered {
+    border: 1px solid #a2a1a1;
+    border-radius: 0.2rem;
+}
+
+.edit-forms-wrap {
+    margin-top: 1rem;
+}
+
+.edit-forms-wrap label {
+    font-size: 0.7rem;
+}
+
+.slide-input {
+    font-size: 0.8rem;
+    height: calc(1.5em + .75rem + 10px);
+}
+
+.edit-input-wrap {
+    display: flex;
+    align-items: center;
+    padding: 0.45rem 0.85rem;
+
+}
+
+.edit-input-wrap input {
+    border: none;
+    background-color: #f6f4f4;
+    flex-grow: 1;
+    height: calc(1.5em + .75rem + -4px);
+    border-radius: 0;
+    font-size: 0.7rem;
+    padding: 0.35rem 0;
+}
+
+.edit-input-wrap label,
+.edit-input-wrap .dim-text {
+    font-size: 0.6rem;
+    margin-bottom: 0;
+}
+
+.edit-input-wrap label {
+    margin-right: 0.6rem;
+}
+
+.edit-input-wrap .dim-text {
+    margin-left: 0.7rem;
+}
+
+.images-select-wrap {
+    margin-top: 1rem;
+    height: calc(100vh - 318px);
+    overflow: hidden auto;
+}
+
+.img-box {
+    height: 230px;
+    margin-bottom: 2rem;
+}
+
+.img-box img {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+}
+
+.btn-edit-cover {
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
+}
+
+.btn-edit-cover i::before {
+    font-size: 0.9rem;
+    display: block;
+    margin-right: 0.2rem;
+}
+
+.modal-content {
+    border: none;
+}
+
+.modal-inner {
+    display: flex;
+}
+
+.modal-inner .left-section {
+    width: 35%;
+    min-height: 80vh;
+    background: linear-gradient(to bottom, #b3a0e0, #2054b3);
+    border-radius: 1rem 0 0 1rem;
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.left-section .title {
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.left-section .ebook-nav {
+    margin: 5rem 4.5rem 0 1.5rem;
+}
+
+.left-section .foot-content {
+
+    color: #ffffff;
+    margin: auto 2rem 3.5rem 1.8rem;
+}
+
+.foot-content .title {
+    font-size: 0.9rem;
+}
+
+.foot-content .desc {
+    font-size: 0.5rem;
+    line-height: 8px;
+}
+
+.btn-add-chapter {
+    color: #bb82f6;
+    background-color: #ffffff;
+    font-size: 0.7rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 0.4rem;
+}
+
+.modal-inner .right-section {
+    min-height: 80vh;
+    width: 65%;
+
+}
+
+.ebook-nav .nav-link {
+    font-size: 0.9rem;
+    color: #ffffff;
+    border-radius: 1.5rem;
+    padding: 0.65rem 0.75rem;
+}
+
+.ebook-nav .nav-link.active {
+    background-color: #ffffff26;
+}
+
+.ebook-nav .nav-link img {
+    width: 1.3rem;
+}
+
+.modal {
+    z-index: 999999999999999999999999999;
+}
+
+.tab-title {
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+}
+
+.right-section .tab-form {
+    border: 2px solid #939393;
+    height: calc(1.5em + .75rem + 10px);
+    color: #b9b9b9;
+    font-size: 0.9rem;
+}
+
+.right-section label {
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+.right-section .form-group {
+    margin-bottom: 1.7rem;
+}
+
+.right-section .tab-pane {
+    padding: 3rem 9rem 2rem 3.5rem;
+}
+
+.right-section .tab-dfy-ebook {
+    padding: 3rem 1rem 2rem 1rem;
+}
+
+.btn-find {
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 0.35rem 1.5rem;
+    border-radius: 0.3rem;
+    font-weight: bold;
+}
+
+.bottom-btn-wrap {
+    margin-top: 2rem;
+}
+
+.tab-dfy-ebook thead th {
+    font-size: 0.6rem;
+    padding: 0.75rem 0.75rem 0.05rem 0.75rem;
+    border: none;
+}
+
+.tab-dfy-ebook tbody {
+    box-shadow: 2px 0px 0px 1px #939393;
+    border-radius: 0.4rem;
+    height: 486px;
+    max-height: 486px;
+    overflow-y: auto;
+}
+
+.tab-dfy-ebook tbody::before {
+    content: "";
+    margin-top: 0.9rem;
+    display: block;
+}
+
+.tab-dfy-ebook tbody::after {
+    content: "";
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.tab-dfy-ebook tbody td {
+    border: none;
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+
+.tab-dfy-ebook input[type=checkbox] {
+    box-shadow: 1px 1px 2px #666565ba;
+}
+
+.tab-dfy-ebook .ebook-prev {
+    width: 100px;
+    height: 130px;
+    background-color: #dcdcdc;
+}
+
+.tab-dfy-ebook tbody tr:nth-child(odd) {
+    background-color: #f6f6f6;
+}
+
+.tab-dfy-ebook tbody tr:nth-child(odd) .ebook-prev {
+    background-color: #ffffff;
+}
+
+@media screen and (min-width: 992px) {
+
+    .modal-lg,
+    .modal-xl {
+        max-width: 900px;
+    }
+}
+
+
+@keyframes appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
