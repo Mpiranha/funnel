@@ -311,6 +311,10 @@
     padding: 0 6rem 0 2rem;
 }
 
+.custom-x-padding {
+    padding: 0 3rem 0 2rem;
+}
+
 .dashboard-box {
     display: flex;
     align-items: center;
@@ -744,12 +748,16 @@
     border: none;
 }
 
+.table-outter {
+    height: 420px;
+    overflow-y: auto;
+    padding-right: 1rem;
+}
+
 .tab-dfy-ebook tbody {
     box-shadow: 2px 0px 0px 1px #939393;
     border-radius: 0.4rem;
-    height: 486px;
-    max-height: 486px;
-    overflow-y: auto;
+
 }
 
 .tab-dfy-ebook tbody::before {
@@ -764,7 +772,8 @@
     display: block;
 }
 
-.tab-dfy-ebook tbody td {
+.tab-dfy-ebook tbody td,
+.table-wrap tbody td {
     border: none;
     font-size: 0.8rem;
     vertical-align: middle;
@@ -774,18 +783,66 @@
     box-shadow: 1px 1px 2px #666565ba;
 }
 
-.tab-dfy-ebook .ebook-prev {
+.tab-dfy-ebook .ebook-prev,
+.table-wrap .ebook-prev {
     width: 100px;
     height: 130px;
     background-color: #dcdcdc;
 }
 
-.tab-dfy-ebook tbody tr:nth-child(odd) {
+.tab-dfy-ebook tbody tr:nth-child(odd),
+.table-wrap tbody tr:nth-child(odd) {
     background-color: #f6f6f6;
 }
 
-.tab-dfy-ebook tbody tr:nth-child(odd) .ebook-prev {
+.tab-dfy-ebook tbody tr:nth-child(odd) .ebook-prev,
+.table-wrap tbody tr:nth-child(odd) .ebook-prev {
     background-color: #ffffff;
+}
+
+.table-wrap {
+    box-shadow: 2px 0px 0px 1px #939393, -2px 3px 5px #93939394;
+    border-radius: 0.4rem;
+    background-color: #ffffff;
+    margin-top: 4rem;
+    padding: 0.3rem 1rem 1rem 0;
+}
+
+.table-wrap thead th {
+    border: none;
+    font-size: 0.6rem;
+    padding: 0.75rem .75rem 0.3rem 0.75rem;
+}
+
+.table-wrap tbody td {
+    font-size: 0.7rem;
+    padding: 0.45rem 0.75rem;
+}
+
+.table-wrap tbody td:nth-child(3) {
+    font-size: 0.9rem;
+    max-width: 260px;
+}
+
+.funnel-download-list .nav-link,
+.table-actions .nav-link {
+    color: #000;
+    font-size: 0.6rem;
+    padding: 0.3rem 1rem;
+}
+
+.table-actions .nav-link img {
+    width: 1.2rem;
+}
+
+.manage-table-overflow {
+    height: 65vh;
+    overflow-y: auto;
+}
+
+.table-product thead th {
+    font-size: 0.7rem;
+    border-bottom: 2px solid #898989 !important;
 }
 
 @media screen and (min-width: 992px) {
