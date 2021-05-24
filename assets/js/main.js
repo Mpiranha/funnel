@@ -22,4 +22,37 @@
 
         });
     });
+
+    $('.btn-toggle').each(function () {
+        $(this).on('click', function () {
+            removeActive('.toggle-item', 'show');
+            removeActive('.btn-toggle', 'active');
+            console.log($(this));
+            console.log($(this).hasClass('active'));
+            if ($(this).hasClass('active')) {
+                alert('Yes');
+                $(this).removeClass('active');
+                $($(this).attr('data-target')).removeClass('show');
+            }
+            //removeActive('.btn-toggle', 'active');
+            $(this).addClass('active');
+            $($(this).attr('data-target')).addClass('show');
+        });
+    });
+
+    $('.btn-page-type').each(function () {
+        $(this).on('click', function () {
+            removeActive('.btn-page-type', 'active');
+
+
+            //removeActive('.btn-toggle', 'active');
+            $(this).addClass('active');
+        });
+    });
+
+    function removeActive(elem, keyword) {
+        $(elem).each(function () {
+            $(this).removeClass(keyword);
+        });
+    }
 })();
