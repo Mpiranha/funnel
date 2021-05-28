@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("./flaticon.ttf?1cd0672fd41efb8fdcf4287455b96d12") format("truetype"),
-url("./flaticon.woff?1cd0672fd41efb8fdcf4287455b96d12") format("woff"),
-url("./flaticon.woff2?1cd0672fd41efb8fdcf4287455b96d12") format("woff2"),
-url("./flaticon.eot?1cd0672fd41efb8fdcf4287455b96d12#iefix") format("embedded-opentype"),
-url("./flaticon.svg?1cd0672fd41efb8fdcf4287455b96d12#flaticon") format("svg");
+    src: url("./flaticon.ttf?449985d0d8381effa136688e3bf77480") format("truetype"),
+url("./flaticon.woff?449985d0d8381effa136688e3bf77480") format("woff"),
+url("./flaticon.woff2?449985d0d8381effa136688e3bf77480") format("woff2"),
+url("./flaticon.eot?449985d0d8381effa136688e3bf77480#iefix") format("embedded-opentype"),
+url("./flaticon.svg?449985d0d8381effa136688e3bf77480#flaticon") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
@@ -110,4 +110,7 @@ i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
 }
 .flaticon-left-arrow:before {
     content: "\f11f";
+}
+.flaticon-google-glass-logo:before {
+    content: "\f120";
 }

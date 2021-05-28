@@ -1270,13 +1270,93 @@ input:checked+.slider:before {
 
 .art-section {
     height: 100vh;
-    width: 55%;
+    width: 50%;
     background-image: url('../Login/login\ art.svg');
     background-color: #7869fc;
     background-repeat: no-repeat;
     background-size: 614px;
     background-position: 60px calc(100% + 100px);
     padding: 2.5rem 4rem;
+}
+
+.form-section {
+    height: 100vh;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    padding: 0 4rem 2rem 3rem;
+    flex-direction: column;
+}
+
+.login-form-wrap {
+    min-width: 300px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.login-form-wrap .title {
+    font-weight: bold;
+    font-size: 3rem;
+}
+
+.login-form-wrap .opposite-link {
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 0.7rem;
+}
+
+.btn-google {
+    color: #ffffff;
+    background-color: #8567fd;
+    padding: 0.6rem 0.75rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.btn-google i::before {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.forgot-pwd-link {
+    padding: 0;
+    font-size: 0.8rem;
+}
+
+.login-form-wrap label {
+    font-size: 0.8rem;
+    color: #717587;
+    padding-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+.login-form-wrap .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-signin {
+    background-color: #ffffff;
+    border: 1px solid #707070;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    height: calc(1.5em + .75rem + 14px);
+}
+
+.btn-login {
+    background-color: #373737;
+    color: #ffffff;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 0.45rem 1.05rem;
+    border-radius: 1rem;
 }
 
 
