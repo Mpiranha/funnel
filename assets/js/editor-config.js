@@ -53,3 +53,4 @@ var options = {
 };
 
 var editor = new Quill('#editor', options);
+var popEditor = new Quill('#pop-editor', options);

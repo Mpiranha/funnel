@@ -23,7 +23,7 @@
     <div class="container-fluid px-0">
         <div class="main-header">
             <h5 class="head-title">
-                My Funnel
+
             </h5>
             <div>
                 <nav class="nav align-items-center">
@@ -159,7 +159,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="create-ebook.html">
+                        <a class="nav-link" href="create-ebook-chapter.html">
                             <i class="flaticon-book icons side-nav-icon"></i>
                             <span class="nav-text">
                                 Create Ebook
@@ -268,16 +268,20 @@
             </div>
             <div class="content-section">
                 <div class="container-fluid custom-padding">
-
+                    <h5 class="head-title">
+                        My Products
+                    </h5>
                     <div class="main-head">
-                        <h4 class="title">Add New Funnel</h4>
-                        <div class="d-flex align-items-center justify-content-between mt-3 px-3">
-                            <div class="control-form">
-                                <input placeholder="Enter Funnel title" class="form-control no-shadow " type="text"
-                                    name="" id="">
-                            </div>
-                            <div>
-                                <button class="btn btn-find">Add Funnel</button>
+                        <div class="main-head-inner bg-light px-3 pt-2 pb-3">
+                            <h4 class="title">Add New Funnel</h4>
+                            <div class="d-flex align-items-center justify-content-between mt-3 px-3">
+                                <div class="control-form">
+                                    <input placeholder="Enter Funnel title" class="form-control no-shadow " type="text"
+                                        name="" id="">
+                                </div>
+                                <div>
+                                    <button class="btn btn-find">Add Funnel</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -292,8 +296,8 @@
                             <thead>
                                 <tr class="bg-light">
                                     <th>TITLE</th>
-                                    <th>PRODUCT</th>
-                                    <th>ORDER</th>
+                                    <th class="text-center">PRODUCT</th>
+                                    <th class="text-center">ORDER</th>
                                     <th class="text-center">ACTIONS</th>
                                 </tr>
                             </thead>
@@ -301,12 +305,27 @@
                                 <tr>
                                     <td scope="row">
                                         <div class="control-form">
-                                            <input class="form-control no-shadow " type="text" name="" id="">
+                                            <input readonly class="form-control no-shadow " type="text" name="" id="" value="Guardian of the stone">
                                         </div>
 
                                     </td>
-                                    <td></td>
-                                    <td></td>
+                                    <td class="text-center">0</td>
+                                    <td>
+                                        <nav class="nav justify-content-center table-actions">
+                                            <li class="nav-item">
+                                                <a class="nav-link px-1" href="#">
+                                                    <img src="../assets/icons/download product.svg" alt="">
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link px-1" href="#">
+                                                    <img src="../assets/icons/copy to my funnel.svg" alt="">
+                                                </a>
+                                            </li>
+                                
+                                        </nav>
+                                    </td>
                                     <td>
                                         <nav class="nav justify-content-center table-actions">
                                             <li class="nav-item">
@@ -332,9 +351,9 @@
                             </tbody>
                         </table>
 
-                        <div class="d-flex justify-content-end m-3 mt-5">
+                        <!-- <div class="d-flex justify-content-end m-3 mt-5">
                             <button class="btn btn-find">Save Changes</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

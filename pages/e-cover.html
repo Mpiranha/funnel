@@ -150,7 +150,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="create-ebook.html">
+                        <a class="nav-link" href="create-ebook-chapter.html">
                             <i class="flaticon-book icons side-nav-icon"></i>
                             <span class="nav-text">
                                 Create Ebook
@@ -274,7 +274,7 @@
                                             data-toggle="dropdown">
                                             Create eCover
                                         </button>
-                                        <div class="dropdown-menu dropdown-menu-right">
+                                        <div class="dropdown-menu dropdown-menu-right dropmenu-wrap">
                                             <a data-toggle="slide-in-wrap" data-target="#flat-cover"
                                                 class="dropdown-item" href="#">Flat Cover</a>
                                             <a data-toggle="slide-in-wrap" data-target="#book-cover"
@@ -289,7 +289,7 @@
                         <table class="table no-border table-ecover mt-3">
                             <thead>
                                 <tr>
-                                    <th>NAME</th>
+                                    <th class="text-left">NAME</th>
                                     <th>THUMBNAIL</th>
                                     <th>DOWNLOAD</th>
                                     <th>CREATED BY</th>
@@ -299,9 +299,89 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td scope="row"></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td scope="row">
+                                        BILL
+                                        FRANKLIN
+                                    </td>
+                                    <td class="text-center">
+                                        <img class="ecover-prev" src="../assets/image/2nd aug Funnel project pdf.png" alt="">
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Download
+                                            </button>
+                                            <div class="dropdown-menu dropmenu-wrap" aria-labelledby="triggerId">
+                                                <a class="dropdown-item" href="#">JPEG Format</a>
+                                                <a class="dropdown-item" href="#">PNG FORMAT</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        May 04, 2021 03:15Am
+                                    </td>
+                                    <td class="text-center">
+                                        May 04, 2021 03:15Am
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Actions
+                                            </button>
+                                            <div class="dropdown-menu dropmenu-wrap" aria-labelledby="triggerId">
+                                                <a class="dropdown-item" href="#">Preview</a>
+                                                <a class="dropdown-item" href="#">Edit</a>
+                                                <a class="dropdown-item" href="#">Delete</a>
+                                                <a class="dropdown-item" href="#">View 3D</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td scope="row">
+                                        BILL
+                                        FRANKLIN
+                                    </td>
+                                    <td class="text-center">
+                                        <img class="ecover-prev" src="../assets/image/2nd aug Funnel project pdf.png" alt="">
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Download
+                                            </button>
+                                            <div class="dropdown-menu dropmenu-wrap" aria-labelledby="triggerId">
+                                                <a class="dropdown-item" href="#">Action</a>
+                                                <a class="dropdown-item" href="#">Disabled action</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td class="text-center">
+                                        May 04, 2021 03:15Am
+                                    </td>
+                                    <td class="text-center">
+                                        May 04, 2021 03:15Am
+                                    </td>
+                                    <td class="text-center">
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button"
+                                                id="triggerId" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Actions
+                                            </button>
+                                            <div class="dropdown-menu dropmenu-wrap" aria-labelledby="triggerId">
+                                                <a class="dropdown-item" href="#">Action</a>
+                                                <a class="dropdown-item" href="#">Disabled action</a>
+                                                <a class="dropdown-item" href="#">Action</a>
+                                            </div>
+                                        </div>
+                                    </td>
                                 </tr>
 
                             </tbody>
@@ -476,7 +556,8 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between mt-3">
-                <button class="btn btn-purple-trans btn-close d-flex align-items-center btn-edit-cover" data-toggle="slide-in-wrap" data-target="#flat-cover" data-dismiss=".slide-in-wrap">
+                <button class="btn btn-purple-trans btn-close d-flex align-items-center btn-edit-cover"
+                    data-toggle="slide-in-wrap" data-target="#flat-cover" data-dismiss=".slide-in-wrap">
                     <i class="flaticon-left-arrow icons"></i>
                     Flat Cover
                 </button>
@@ -558,7 +639,8 @@
                 </div>
             </div>
             <div class="d-flex justify-content-between mt-3">
-                <button class="btn btn-purple-trans btn-close d-flex align-items-center btn-edit-cover" data-toggle="slide-in-wrap" data-target="#book-cover" data-dismiss=".slide-in-wrap">
+                <button class="btn btn-purple-trans btn-close d-flex align-items-center btn-edit-cover"
+                    data-toggle="slide-in-wrap" data-target="#book-cover" data-dismiss=".slide-in-wrap">
                     <i class="flaticon-left-arrow icons"></i>
                     3D Book Cover
                 </button>
