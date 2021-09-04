@@ -25,18 +25,27 @@
 
     $('.btn-toggle').each(function () {
         $(this).on('click', function () {
-            removeActive('.toggle-item', 'show');
-            removeActive('.btn-toggle', 'active');
-            console.log($(this));
-            console.log($(this).hasClass('active'));
-            if ($(this).hasClass('active')) {
-                alert('Yes');
-                $(this).removeClass('active');
-                $($(this).attr('data-target')).removeClass('show');
+            // removeActive('.toggle-item', 'show');
+            // removeActive('.btn-toggle', 'active');
+            // console.log($(this));
+            // console.log($(this).hasClass('active'));
+            $($(this).attr('data-target')).toggleClass('show');
+            if ($(this).attr('data-text')) {
+
+                console.log($($(this).attr('data-target')).hasClass('show'));
+                $(this).text($($(this).attr('data-target')).hasClass('show') ? $(this).attr('data-text') : 'Click to Show')
             }
-            //removeActive('.btn-toggle', 'active');
-            $(this).addClass('active');
-            $($(this).attr('data-target')).addClass('show');
+
+
+            // if ($(this).hasClass('active')) {
+            //     alert('Yes');
+            //     // $(this).removeClass('active');
+            //     $($(this).attr('data-target')).removeClass('show');
+            //     return;
+            // }
+            // //removeActive('.btn-toggle', 'active');
+            // // $(this).addClass('active');
+            // $($(this).attr('data-target')).addClass('show');
         });
     });
 
