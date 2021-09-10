@@ -299,17 +299,87 @@
     display: flex;
 }
 
+.side-nav-icon.dashboard::before {
+    color: #3d3dec;
+}
+
+.side-nav-icon.ecover::before {
+    color: #800080;
+}
+
+.side-nav-icon.ebook::before {
+    color: #57cf3b;
+}
+
+.side-nav-icon.library::before {
+    color: #3c3cec;
+}
+
+.side-nav-icon.product::before {
+    color: #ffa500;
+}
+
+.side-nav-icon.funnel::before {
+    color: #1d1eab;
+}
+
+.side-nav-icon.dfy-funnel::before {
+    color: #f31a1a;
+}
+
+.side-nav-icon.version::before {
+    color: #dbdb09;
+}
+
+.side-nav-icon.conversion::before {
+    color: #800080;
+}
+
+.side-nav-icon.builder::before {
+    color: #57cf3b;
+}
+
+.side-nav-icon.training::before {
+    color: #3c3cec;
+}
+
+.side-nav-icon.help::before {
+    color: #ffa500;
+}
+
+.side-nav-icon.traffic::before {
+    color: #0b0b8f;
+}
+
+.side-nav-icon.license::before {
+    color: #f31a1a;
+}
+
+.side-nav-icon.member::before {
+    color: #dbdb09;
+}
+
+.nav-wrap .nav-link.active .side-nav-icon::before {
+    color: #ffffff;
+}
+
 .nav-wrap .nav-link.active {
     color: #ffffff;
     background-color: #656dfb;
 }
 
-.side-nav-icon {
-    width: 0.9rem;
+.side-nav-icon::before {
+    font-size: 0.9rem;
     margin-right: 0.3rem;
     /* margin-top: 4px;
     display: inline-block; */
 }
+
+
+
+
+
+
 
 .welcome-box {
     background: linear-gradient(#8466fc, #6b6cfc);
