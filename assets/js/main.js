@@ -1,4 +1,5 @@
 (function () {
+    $('[data-toggle="tooltip"]').tooltip();
     $('.btn-drop').each(function () {
         $(this).on('click', function () {
             $($(this).attr('data-target')).toggle('show');
@@ -22,6 +23,40 @@
 
         });
     });
+
+    $("#is-sale-active").on('change', function () {
+        if ($(this).is(":checked")) {
+            $('.sales-page .btn-sales-page').addClass('show');
+            //removeActive('.sales-page .btn-page-type', 'active');
+            //$('.btn-sales-page').addClass('active')
+
+        } else {
+            if ($('.btn-sales-page').hasClass('show')) {
+                $('.btn-sales-page').removeClass('show');
+            }
+
+            if ($('#sales-page').hasClass('active')) {
+                $('#sales-page').removeClass('active');
+            }
+
+            if ($('#sales-page').hasClass('show')) {
+                $('#sales-page').removeClass('show');
+            }
+
+            if ($('.btn-sales-page').hasClass('active')) {
+                // $('.btn-squeeze').addClass('active');
+                $('#squeeze-page').addClass('active');
+            }
+
+
+
+            
+            //$('.sales-page .btn-page-type')[1].classList.add('active');
+
+            //$('.sales-page .btn-page-type').addClass('active')
+        }
+    })
+
 
     $('.btn-toggle').each(function () {
         $(this).on('click', function () {
@@ -49,15 +84,15 @@
         });
     });
 
-    $('.btn-page-type').each(function () {
-        $(this).on('click', function () {
-            removeActive('.btn-page-type', 'active');
+    // $('.btn-page-type').each(function () {
+    //     $(this).on('click', function () {
+    //         removeActive('.btn-page-type', 'active');
 
 
-            //removeActive('.btn-toggle', 'active');
-            $(this).addClass('active');
-        });
-    });
+    //         //removeActive('.btn-toggle', 'active');
+    //         $(this).addClass('active');
+    //     });
+    // });
 
     function removeActive(elem, keyword) {
         $(elem).each(function () {
