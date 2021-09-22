@@ -1345,7 +1345,9 @@ input:checked+.slider:before {
 #pop-editor,
 #editor-sales,
 #editor-squeeze,
-#editor-download {
+#editor-download,
+#exit-download-editor,
+#exit-sales-editor {
     min-height: 300px;
 }
 
@@ -2020,6 +2022,51 @@ main {
     padding: 0;
     margin: 0;
     overflow: hidden;
+}
+
+.pop-up-page-edit {
+    display: none;
+}
+
+.setting-page-wrap .conversion-box {
+    padding: 1.5rem 1.2rem 0.9rem 1rem;
+}
+
+.setting-page-wrap .conversion-box .title {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+    font-weight: bold;
+    color: #6d6d6d;
+}
+
+.setting-page-wrap .conversion-box .desc {
+    font-size: 0.6rem;
+}
+
+.setting-page-wrap .conversion-box label {
+    font-size: 0.6rem;
+    display: flex;
+    color: #6d6d6d;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.setting-page-wrap .conversion-box .check-box {
+    width: 0.7rem;
+    border: 1px solid #a2a1a1;
+}
+
+.setting-page-wrap .conversion-box label i::before {
+    font-size: 0.7rem;
+    color: #5be1b8;
+    margin-left: 0.3rem;
+    display: inline-block;
+    padding-top: 4px;
+}
+
+.conversion-box input {
+    border: 2px solid #a2a1a1;
+    font-size: 0.7rem;
 }
 
 @media screen and (min-width: 992px) {

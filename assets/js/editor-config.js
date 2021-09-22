@@ -56,4 +56,6 @@ var editor = new Quill('#editor', options);
 var editorSales = new Quill('#editor-sales', options);
 var editorSqueeze = new Quill('#editor-squeeze', options);
 var editorDownloadPage = new Quill('#editor-download', options);
+var exitSalesEditor = new Quill('#exit-sales-editor', options);
+var exitDownloadEditor = new Quill('#exit-download-editor', options);
 var popEditor = new Quill('#pop-editor', options);

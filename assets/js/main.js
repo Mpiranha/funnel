@@ -46,14 +46,20 @@
             if ($('.btn-sales-page').hasClass('active')) {
                 // $('.btn-squeeze').addClass('active');
                 $('#squeeze-page').addClass('active');
-            }
-
-
-
-            
+            } 
             //$('.sales-page .btn-page-type')[1].classList.add('active');
 
             //$('.sales-page .btn-page-type').addClass('active')
+        }
+    });
+
+    $("#is-exit-active").on('change', function () {
+        if ($(this).is(":checked")) {
+            $('.pop-up-page-edit').addClass('show');
+           
+
+        } else {
+            $('.pop-up-page-edit').removeClass('show');
         }
     })
 

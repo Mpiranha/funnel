@@ -283,7 +283,7 @@
                             Back To My Product
                         </button>
                     </div>
-                    <div class="content-wrap p-3 pr-5 mb-5 bg-light mt-3">
+                    <div class="content-wrap p-3 mb-5 bg-light mt-3">
                         <div class="d-flex justify-content-between mb-5">
                             <div class="toggle-section">
                                 <div class="text">
@@ -397,17 +397,188 @@
                             </div>
                         </div>
 
-                        <div class="select-page-type">
-                            <button class="btn no-shadow btn-page-type active">Sales Page Content </button>
-                            <button class="btn btn-page-type no-shadow">Squeeze (ThankYou) Page <i
-                                    class="flaticon-question icons"></i></button>
-                            <button class="btn no-shadow btn-page-type">Download Page Content</button>
-                            <button class="btn no-shadow btn-page-type">Settings</button>
+
+                        <ul class="nav nav-pills select-page-type sales-page" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link btn no-shadow btn-page-type btn-sales-page" id="sales-page-tab"
+                                    data-toggle="pill" href="#sales-page" role="tab" aria-controls="sales-page"
+                                    aria-selected="true">
+                                    Sales
+                                    Page Content
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-page-type btn-squeeze no-shadow active" id="squeeze-page-tab"
+                                    data-toggle="pill" href="#squeeze-page" role="tab" aria-controls="squeeze-page"
+                                    aria-selected="false">
+                                    Squeeze (ThankYou) Page
+                                    <i class="flaticon-question icons"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn no-shadow btn-page-type" id="download-page-tab"
+                                    data-toggle="pill" href="#download-page" role="tab" aria-controls="download-page"
+                                    aria-selected="false">
+                                    Download Page
+                                    Content
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn no-shadow btn-page-type" id="settings-page-tab"
+                                    data-toggle="pill" href="#settings-page" role="tab" aria-controls="settings-page"
+                                    aria-selected="false">
+                                    Settings
+                                </a>
+                            </li>
+                        </ul>
+
+                        <!-- <div class="editor-wrap mb-4">
+                            <div id="editor"></div>
+                        </div> -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane container fade" role="tabpanel" id="sales-page">
+                                <div class="editor-wrap mb-4 bg-light add-shadow">
+                                    <div id="editor-sales"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container" role="tabpanel" id="squeeze-page">
+                                <div class="editor-wrap mb-4 bg-light add-shadow">
+                                    <div id="editor-squeeze"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container fade" role="tabpanel" id="download-page">
+                                <div class="editor-wrap mb-4 bg-light add-shadow">
+                                    <div id="editor-download"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade active show" role="tabpanel" id="settings-page">
+                                <div class="content-wrap p-3 mb-5 bg-light mt-3 setting-page-wrap">
+                                    <div class="row mt-3">
+                                        <div class="col-6">
+                                            <div class="conversion-box">
+                                                <h6 class="title">SQUEEZE( THANK YOU) PAGE SETTINGS</h6>
+                                                <!-- <div class="desc">
+                                                    AUTORESPONDER FROM CODE( OPTIONAL)
+                                                    <i class="flaticon-question icons"></i></label>
+                                                </div> -->
+
+
+                                                <div class="form-group">
+                                                    <label class="mb-0" for="my-textarea"> AUTORESPONDER FROM CODE(
+                                                        OPTIONAL) <i class="flaticon-question icons "></i></label>
+                                                    <textarea id="my-textarea" class="form-control" name="" rows="3"
+                                                        placeholder="Insert Autoresponder From Code Here"></textarea>
+                                                </div>
+                                            </div>
+
+                                            <div class="conversion-box">
+                                                <h6 class="title">ALL PAGES SETTINGS</h6>
+
+
+                                                <div class="form-group">
+                                                    <label class="mb-0" for="my-textarea">FACEBOOK PIXEL CODE <i
+                                                            class="flaticon-question icons "></i></label>
+                                                    <textarea id="my-textarea" class="form-control" name="" rows="3"
+                                                        placeholder="Insert Countdown Timer Code Here"></textarea>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="">PRODUCT PRICE <i class="flaticon-question icons "></i>
+                                                    </label>
+                                                    <input type="text" name="" id="" class="form-control"
+                                                        placeholder="">
+                                                </div>
+
+                                            </div>
+
+                                            <div class="conversion-box">
+                                                <h6 class="title">FACEBOOKS TOOLS</h6>
+
+
+                                                <div class="form-group mb-4">
+                                                    <label class="mb-0" for="my-textarea">FACEBOOK PIXEL CODE <i
+                                                            class="flaticon-question icons "></i>
+                                                        <label class="ml-auto">
+                                                            <input class="mr-1 check-box" type="checkbox" name="" id="">
+                                                            USE DEFAULT SETTINGS <i
+                                                                class="flaticon-question icons "></i></label>
+                                                    </label>
+                                                    <textarea id="my-textarea" class="form-control" name="" rows="3"
+                                                        placeholder="Enter Your Facebook Pixel Code Here"></textarea>
+                                                </div>
+
+                                                <div class="form-group mb-4">
+                                                    <label class="mb-0" for="my-textarea">FACEBOOK COMMENT SDK CODE <i
+                                                            class="flaticon-question icons "></i>
+                                                        <label class="ml-auto">
+                                                            <input class="mr-1 check-box" type="checkbox" name="" id="">
+                                                            USE DEFAULT SETTINGS <i
+                                                                class="flaticon-question icons "></i></label>
+                                                    </label>
+                                                    <textarea id="my-textarea" class="form-control" name="" rows="3"
+                                                        placeholder="Enter Javascript Sdk Code From Facebook"></textarea>
+                                                </div>
+
+                                                <div class="form-group mb-4">
+                                                    <label class="mb-0" for="my-textarea">FACEBOOK COMMENT CODE SNIPPET
+                                                        <i class="flaticon-question icons "></i>
+                                                        <label class="ml-auto">
+                                                            <input class="mr-1 check-box" type="checkbox" name="" id="">
+                                                            USE DEFAULT SETTINGS <i
+                                                                class="flaticon-question icons "></i></label>
+                                                    </label>
+                                                    <textarea id="my-textarea" class="form-control" name="" rows="3"
+                                                        placeholder="Enter Javascript Sdk Code From Facebook"></textarea>
+                                                </div>
+
+                                                <div class="form-group mb-4">
+                                                    <label class="mb-0" for="my-textarea">FACEBOOK CHAT WIDGET CODE <i
+                                                            class="flaticon-question icons "></i>
+                                                        <label class="ml-auto">
+                                                            <input class="mr-1 check-box" type="checkbox" name="" id="">
+                                                            USE DEFAULT SETTINGS <i
+                                                                class="flaticon-question icons "></i></label>
+                                                    </label>
+                                                    <textarea id="my-textarea" class="form-control" name="" rows="3"
+                                                        placeholder="Enter Javascript Sdk Code From Facebook"></textarea>
+                                                </div>
+
+
+
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="conversion-box">
+                                                <h6 class="title">DOWNLOAD PAGE SETTINGS</h6>
+
+
+                                                <div class="form-group">
+                                                    <label class="mb-0" for="my-textarea">DOWNLOAD PRODUCT LINK TEXT <i
+                                                            class="flaticon-question icons "></i></label>
+                                                    <input type="text" name="" id="" class="form-control"
+                                                        placeholder="Insert Autoresponder From Code Here">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="">DOWNLOAD LICENCE LINK TEXT <i
+                                                            class="flaticon-question icons "></i>
+                                                    </label>
+                                                    <input type="text" name="" id="" class="form-control"
+                                                        placeholder="Insert Autoresponder From Code Here">
+                                                </div>
+
+                                            </div>
+                                            <div class="conversion-box">
+                                                <h6 class="title">SELECT SOCIAL SETTINGS</h6>
+                                                <button class="btn btn-find px-3 btn-full-br">Select Social Proof Popups</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="editor-wrap mb-4">
-                            <div id="editor"></div>
-                        </div>
 
                         <div class="bg-blue-wrap">
                             <div class="toggle-section">

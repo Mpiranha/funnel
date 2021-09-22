@@ -271,29 +271,32 @@
                     <h5 class="head-title">
                         Add New Bonus Page
                     </h5>
-                   
+
                     <div class="content-wrap p-3 pr-5 mb-5 mt-3 no-border">
-                      
+
                         <div class="add-new-builder-box bg-light">
                             <div class="d-flex align-items-center">
                                 <h6 class="title">Add New Bonus Page</h6>
-                                <a href="bonus-builder.html" class="btn btn-find btn-full-br">Back To Bonus Page Builder</a>
+                                <a href="bonus-builder.html" class="btn btn-find btn-full-br">Back To Bonus Page
+                                    Builder</a>
                             </div>
-                            <input type="text" class="form-control input-bordered no-shadow slide-input my-2" name="" id="" placeholder="Enter page title">
+                            <input type="text" class="form-control input-bordered no-shadow slide-input my-2" name=""
+                                id="" placeholder="Enter page title">
                         </div>
                         <div class="token-wrap mr-5 add-shadow bg-light no-border">
-                            
+
                             <div class="btn-flex mb-4">
                                 <div class="d-flex align-items-center">
                                     <div class="text-label">
                                         Custom Tokens/Shortcodes
                                     </div>
 
-                                    <button data-target="#show-template"  data-text="click to hide"
+                                    <button data-target="#show-template" data-text="click to hide"
                                         class="btn btn-toggle btn-click-show mr-3">click to
                                         show</button>
                                 </div>
-                                <button data-toggle="modal" data-target="#choose-template" class="btn btn-toggle ml-auto btn-load-template">Load
+                                <button data-toggle="modal" data-target="#choose-template"
+                                    class="btn btn-toggle ml-auto btn-load-template">Load
                                     Product Page
                                     Template</button>
                             </div>
@@ -357,21 +360,68 @@
                             </div>
                         </div>
 
-                        <div class="select-page-type my-3">
-                            <button class="btn no-shadow btn-page-type active">Sales Page Content </button>
-                            <button class="btn btn-page-type no-shadow">Squeeze (ThankYou) Page <i
-                                    class="flaticon-question icons"></i></button>
-                            <button class="btn no-shadow btn-page-type">Download Page Content</button>
-                            <button class="btn no-shadow btn-page-type">Settings</button>
-                        </div>
+                        <ul class="nav nav-pills select-page-type sales-page" id="pills-tab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link btn no-shadow btn-page-type" id="sales-page-tab"
+                                    data-toggle="pill" href="#sales-page" role="tab" aria-controls="sales-page"
+                                    aria-selected="true">
+                                    Sales
+                                    Page Content
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn btn-page-type btn-squeeze no-shadow active" id="squeeze-page-tab"
+                                    data-toggle="pill" href="#squeeze-page" role="tab" aria-controls="squeeze-page"
+                                    aria-selected="false">
+                                    Squeeze (ThankYou) Page
+                                    <i class="flaticon-question icons"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn no-shadow btn-page-type" id="download-page-tab"
+                                    data-toggle="pill" href="#download-page" role="tab" aria-controls="download-page"
+                                    aria-selected="false">
+                                    Download Page
+                                    Content
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link btn no-shadow btn-page-type" id="settings-page-tab"
+                                    data-toggle="pill" href="#settings-page" role="tab" aria-controls="settings-page"
+                                    aria-selected="false">
+                                    Settings
+                                </a>
+                            </li>
+                        </ul>
 
-                        <div class="editor-wrap mb-4 mt-1 bg-light add-shadow">
+                        <!-- <div class="editor-wrap mb-4">
                             <div id="editor"></div>
+                        </div> -->
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div class="tab-pane container fade" role="tabpanel" id="sales-page">
+                                <div class="editor-wrap mb-4 bg-light add-shadow">
+                                    <div id="editor-sales"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container active" role="tabpanel" id="squeeze-page">
+                                <div class="editor-wrap mb-4 bg-light add-shadow">
+                                    <div id="editor-squeeze"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container fade" role="tabpanel" id="download-page">
+                                <div class="editor-wrap mb-4 bg-light add-shadow">
+                                    <div id="editor-download"></div>
+                                </div>
+                            </div>
+                            <div class="tab-pane container fade" role="tabpanel" id="settings-page">
+                               
+                            </div>
                         </div>
 
-                        
 
-                       
+
+
 
 
                     </div>
