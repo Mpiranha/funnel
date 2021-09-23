@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>listing directory /pages/</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            outline: 0;
+        }
+
+        body {
+            padding: 80px 100px;
+            font: 13px "Helvetica Neue", "Lucida Grande", "Arial";
+            background: #ECE9E9 -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fff), to(#ECE9E9));
+            background: #ECE9E9 -moz-linear-gradient(top, #fff, #ECE9E9);
+            background-repeat: no-repeat;
+            color: #555;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-size: 22px;
+            color: #343434;
+        }
+
+        h1 em,
+        h2 em {
+            padding: 0 5px;
+            font-weight: normal;
+        }
+
+        h1 {
+            font-size: 60px;
+        }
+
+        h2 {
+            margin-top: 10px;
+        }
+
+        h3 {
+            margin: 5px 0 10px 0;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #eee;
+            font-size: 18px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        ul li:hover {
+            cursor: pointer;
+            color: #2e2e2e;
+        }
+
+        ul li .path {
+            padding-left: 5px;
+            font-weight: bold;
+        }
+
+        ul li .line {
+            padding-right: 5px;
+            font-style: italic;
+        }
+
+        ul li:first-child .path {
+            padding-left: 0;
+        }
+
+        p {
+            line-height: 1.5;
+        }
+
+        a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #303030;
+        }
+
+        #stacktrace {
+            margin-top: 15px;
+        }
+
+        .directory h1 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        ul#files {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        ul#files li {
+            float: left;
+            width: 30%;
+            line-height: 25px;
+            margin: 1px;
+        }
+
+        ul#files li a {
+            display: block;
+            height: 25px;
+            border: 1px solid transparent;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        ul#files li a:focus,
+        ul#files li a:hover {
+            background: rgba(255, 255, 255, 0.65);
+            border: 1px solid #ececec;
+        }
+
+        ul#files li a.highlight {
+            -webkit-transition: background .4s ease-in-out;
+            background: #ffff4f;
+            border-color: #E9DC51;
+        }
+
+        #search {
+            display: block;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 90px;
+            -webkit-transition: width ease 0.2s, opacity ease 0.4s;
+            -moz-transition: width ease 0.2s, opacity ease 0.4s;
+            -webkit-border-radius: 32px;
+            -moz-border-radius: 32px;
+            -webkit-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
+            -moz-box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.25), inset 0px 1px 3px rgba(0, 0, 0, 0.7), 0px 1px 0px rgba(255, 255, 255, 0.03);
+            -webkit-font-smoothing: antialiased;
+            text-align: left;
+            font: 13px "Helvetica Neue", Arial, sans-serif;
+            padding: 4px 10px;
+            border: none;
+            background: transparent;
+            margin-bottom: 0;
+            outline: none;
+            opacity: 0.7;
+            color: #888;
+        }
+
+        #search:focus {
+            width: 120px;
+            opacity: 1.0;
+        }
+
+        /*views*/
+        #files span {
+            display: inline-block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-indent: 10px;
+        }
+
+        #files .name {
+            background-repeat: no-repeat;
+        }
+
+        #files .icon .name {
+            text-indent: 28px;
+        }
+
+        /*tiles*/
+        .view-tiles .name {
+            width: 100%;
+            background-position: 8px 5px;
+        }
+
+        .view-tiles .size,
+        .view-tiles .date {
+            display: none;
+        }
+
+        /*details*/
+        ul#files.view-details li {
+            float: none;
+            display: block;
+            width: 90%;
+        }
+
+        ul#files.view-details li.header {
+            height: 25px;
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .view-details .header {
+            border-radius: 5px;
+        }
+
+        .view-details .name {
+            width: 60%;
+            background-position: 8px 5px;
+        }
+
+        .view-details .size {
+            width: 10%;
+        }
+
+        .view-details .date {
+            width: 30%;
+        }
+
+        .view-details .size,
+        .view-details .date {
+            text-align: right;
+            direction: rtl;
+        }
+
+        /*mobile*/
+        @media (max-width: 768px) {
+            body {
+                font-size: 13px;
+                line-height: 16px;
+                padding: 0;
+            }
+
+            #search {
+                position: static;
+                width: 100%;
+                font-size: 2em;
+                line-height: 1.8em;
+                text-indent: 10px;
+                border: 0;
+                border-radius: 0;
+                padding: 10px 0;
+                margin: 0;
+            }
+
+            #search:focus {
+                width: 100%;
+                border: 0;
+                opacity: 1;
+            }
+
+            .directory h1 {
+                font-size: 2em;
+                line-height: 1.5em;
+                color: #fff;
+                background: #000;
+                padding: 15px 10px;
+                margin: 0;
+            }
+
+            ul#files {
+                border-top: 1px solid #cacaca;
+            }
+
+            ul#files li {
+                float: none;
+                width: auto !important;
+                display: block;
+                border-bottom: 1px solid #cacaca;
+                font-size: 2em;
+                line-height: 1.2em;
+                text-indent: 0;
+                margin: 0;
+            }
+
+            ul#files li:nth-child(odd) {
+                background: #e0e0e0;
+            }
+
+            ul#files li a {
+                height: auto;
+                border: 0;
+                border-radius: 0;
+                padding: 15px 10px;
+            }
+
+            ul#files li a:focus,
+            ul#files li a:hover {
+                border: 0;
+            }
+
+            #files .header,
+            #files .size,
+            #files .date {
+                display: none !important;
+            }
+
+            #files .name {
+                float: none;
+                display: inline-block;
+                width: 100%;
+                text-indent: 0;
+                background-position: 0 50%;
+            }
+
+            #files .icon .name {
+                text-indent: 41px;
+            }
+        }
+
+        #files .icon-directory .name {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAABGdBTUEAALGPC/xhBQAAAWtQTFRFAAAA/PPQ9Nhc2q402qQ12qs2/PTX2pg12p81+/LM89NE9dto2q82+/fp2rM22qY39d6U+/bo2qo2/frx/vz32q812qs12qE279SU8c4w9NZP+/LK//367s9y7s925cp0/vzw9t92//342po2/vz25s1579B6+OSO2bQ0/v799NyT8tE79dld8Msm+OrC/vzx79KA2IYs7s6I9d6R4cJe9+OF/PLI/fry79OF/v30//328tWB89RJ8c9p8c0u9eCf//7+9txs6sts5Mdr+++5+u2z/vrv+/fq6cFz8dBs8tA57cpq+OaU9uGs27Y8//799NdX/PbY9uB89unJ//z14sNf+emh+emk+vDc+uys9+OL8dJy89NH+eic8tN5+OaV+OWR9N2n9dtl9t529+KF9+GB9Nue9NdU8tR/9t5y89qW9dpj89iO89eG/vvu2pQ12Y4z/vzy2Ict/vvv48dr/vzz4sNg///+2Igty3PqwQAAAAF0Uk5TAEDm2GYAAACtSURBVBjTY2AgA2iYlJWVhfohBPg0yx38y92dS0pKVOVBAqIi6sb2vsWWpfrFeTI8QAEhYQEta28nCwM1OVleZqCAmKCEkUdwYWmhQnFeOStQgL9cySqkNNDHVJGbiY0FKCCuYuYSGRsV5KgjxcXIARRQNncNj09JTgqw0ZbkZAcK5LuFJaRmZqfHeNnpSucDBQoiEtOycnIz4qI9bfUKQA6pKKqAgqIKQyK8BgAZ5yfODmnHrQAAAABJRU5ErkJggg==);
+        }
+
+        #files .icon-text-html .name {
+            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHtSURBVDjLjZM9T9tQFIYpQ5eOMBKlW6eWIQipa8RfQKQghEAKqZgKFQgmFn5AWyVDCipVQZC2EqBWlEqdO2RCpAssQBRsx1+1ndix8wFvfW6wcUhQsfTI0j33PD7n+N4uAF2E+/S5RFwG/8Njl24/LyCIOI6j1+v1y0ajgU64cSSTybdBSVAwSMmmacKyLB/DMKBpGkRRZBJBEJBKpXyJl/yABLTBtm1Uq1X2JsrlMnRdhyRJTFCpVEAfSafTTUlQoFs1luxBAkoolUqQZbmtJTYTT/AoHInOfpcwtVtkwcSBgrkDGYph+60oisIq4Xm+VfB0+U/P0Lvj3NwPGfHPTcHMvoyFXwpe7UmQtAqTUCU0D1VVbwTPVk5jY19Fe3ZfQny7CE51WJDXqpjeEUHr45ki9rIqa4dmQiJfMLItGEs/FcQ2ucbRmdnSYy5vYWyLx/w3EaMfLmBaDpMQvuDJ65PY8Dpnz3wpYmLtApzcrIAqmfrEgdZH1grY/a36w6Xz0DKD8ES25/niYS6+wWE8mWfByY8cXmYEJFYLkHUHtVqNQcltAvoLD3v7o/FUHsNvzlnwxfsCEukC/ho3yUHaBN5Buo17Ojtyl+DqrnvQgUtfcC0ZcAdkUeA+ye7eMru9AUGIJPe4zh509UP/AAfNypi8oj/mAAAAAElFTkSuQmCC);
+        }
+    </style>
+    <script>
+        function $(id) {
+            var el = 'string' == typeof id ?
+                document.getElementById(id) :
+                id;
+
+            el.on = function (event, fn) {
+                if ('content loaded' == event) {
+                    event = window.attachEvent ? "load" : "DOMContentLoaded";
+                }
+                el.addEventListener ?
+                    el.addEventListener(event, fn, false) :
+                    el.attachEvent("on" + event, fn);
+            };
+
+            el.all = function (selector) {
+                return $(el.querySelectorAll(selector));
+            };
+
+            el.each = function (fn) {
+                for (var i = 0, len = el.length; i < len; ++i) {
+                    fn($(el[i]), i);
+                }
+            };
+
+            el.getClasses = function () {
+                return this.getAttribute('class').split(/\s+/);
+            };
+
+            el.addClass = function (name) {
+                var classes = this.getAttribute('class');
+                el.setAttribute('class', classes ?
+                    classes + ' ' + name :
+                    name);
+            };
+
+            el.removeClass = function (name) {
+                var classes = this.getClasses().filter(function (curr) {
+                    return curr != name;
+                });
+                this.setAttribute('class', classes.join(' '));
+            };
+
+            return el;
+        }
+
+        function search() {
+            var str = $('search').value.toLowerCase();
+            var links = $('files').all('a');
+
+            links.each(function (link) {
+                var text = link.textContent.toLowerCase();
+
+                if ('..' == text) return;
+                if (str.length && ~text.indexOf(str)) {
+                    link.addClass('highlight');
+                } else {
+                    link.removeClass('highlight');
+                }
+            });
+        }
+
+        $(window).on('content loaded', function () {
+            $('search').on('keyup', search);
+        });
+    </script>
+</head>
+
+<body class="directory" data-new-gr-c-s-check-loaded="8.884.0" data-gr-ext-installed="">
+    <input id="search" type="text" placeholder="Search" autocomplete="off">
+    <div id="wrapper">
+        <h1><a href="/">~</a> / <a href="/pages">pages</a> / </h1>
+        <ul id="files" class="view-tiles">
+            <li><a href="/" class="icon icon-directory" title=".."><span class="name">..</span><span
+                        class="size"></span><span class="date"></span></a></li>
+            <li><a href="/pages/add-bonus-builder.html" class="icon icon icon-html icon-text-html"
+                    title="add-bonus-builder.html"><span class="name">add-bonus-builder.html</span><span
+                        class="size">24919</span><span class="date">9/22/2021 1:59:28 AM</span></a></li>
+            <li><a href="/pages/add-product-funnel.html" class="icon icon icon-html icon-text-html"
+                    title="add-product-funnel.html"><span class="name">add-product-funnel.html</span><span
+                        class="size">37208</span><span class="date">9/22/2021 7:33:12 PM</span></a></li>
+            <li><a href="/pages/add-product.html" class="icon icon icon-html icon-text-html"
+                    title="add-product.html"><span class="name">add-product.html</span><span
+                        class="size">31141</span><span class="date">9/22/2021 1:46:12 AM</span></a></li>
+            <li><a href="/pages/bonus-builder.html" class="icon icon icon-html icon-text-html"
+                    title="bonus-builder.html"><span class="name">bonus-builder.html</span><span
+                        class="size">22941</span><span class="date">9/4/2021 3:07:43 PM</span></a></li>
+            <li><a href="/pages/conversion-tool.html" class="icon icon icon-html icon-text-html"
+                    title="conversion-tool.html"><span class="name">conversion-tool.html</span><span
+                        class="size">18234</span><span class="date">9/4/2021 2:03:03 PM</span></a></li>
+            <li><a href="/pages/create-ebook-article.html" class="icon icon icon-html icon-text-html"
+                    title="create-ebook-article.html"><span class="name">create-ebook-article.html</span><span
+                        class="size">34229</span><span class="date">8/30/2021 12:27:12 AM</span></a></li>
+            <li><a href="/pages/create-ebook-chapter.html" class="icon icon icon-html icon-text-html"
+                    title="create-ebook-chapter.html"><span class="name">create-ebook-chapter.html</span><span
+                        class="size">34535</span><span class="date">9/20/2021 11:33:43 PM</span></a></li>
+            <li><a href="/pages/create-ebook-choose.html" class="icon icon icon-html icon-text-html"
+                    title="create-ebook-choose.html"><span class="name">create-ebook-choose.html</span><span
+                        class="size">22443</span><span class="date">8/31/2021 10:17:41 PM</span></a></li>
+            <li><a href="/pages/create-ebook-manual.html" class="icon icon icon-html icon-text-html"
+                    title="create-ebook-manual.html"><span class="name">create-ebook-manual.html</span><span
+                        class="size">18414</span><span class="date">8/30/2021 12:25:48 AM</span></a></li>
+            <li><a href="/pages/create-ebook-upload.html" class="icon icon icon-html icon-text-html"
+                    title="create-ebook-upload.html"><span class="name">create-ebook-upload.html</span><span
+                        class="size">18858</span><span class="date">8/30/2021 12:25:06 AM</span></a></li>
+            <li><a href="/pages/create-ebook-url.html" class="icon icon icon-html icon-text-html"
+                    title="create-ebook-url.html"><span class="name">create-ebook-url.html</span><span
+                        class="size">26825</span><span class="date">8/30/2021 12:26:04 AM</span></a></li>
+            <li><a href="/pages/create-ebook.html" class="icon icon icon-html icon-text-html"
+                    title="create-ebook.html"><span class="name">create-ebook.html</span><span
+                        class="size">44105</span><span class="date">8/28/2021 5:05:45 PM</span></a></li>
+            <li><a href="/pages/create-manual.html" class="icon icon icon-html icon-text-html"
+                    title="create-manual.html"><span class="name">create-manual.html</span><span
+                        class="size">35549</span><span class="date">8/29/2021 1:36:15 AM</span></a></li>
+            <li><a href="/pages/dfy-funnel.html" class="icon icon icon-html icon-text-html"
+                    title="dfy-funnel.html"><span class="name">dfy-funnel.html</span><span
+                        class="size">31307</span><span class="date">9/22/2021 1:53:01 AM</span></a></li>
+            <li><a href="/pages/e-cover.html" class="icon icon icon-html icon-text-html" title="e-cover.html"><span
+                        class="name">e-cover.html</span><span class="size">34387</span><span class="date">9/20/2021
+                        9:52:10 AM</span></a></li>
+            <li><a href="/pages/forgot-pwd.html" class="icon icon icon-html icon-text-html"
+                    title="forgot-pwd.html"><span class="name">forgot-pwd.html</span><span class="size">2567</span><span
+                        class="date">8/12/2021 11:36:45 PM</span></a></li>
+            <li><a href="/pages/funnel-product-select.html" class="icon icon icon-html icon-text-html"
+                    title="funnel-product-select.html"><span class="name">funnel-product-select.html</span><span
+                        class="size">27448</span><span class="date">9/22/2021 8:04:01 PM</span></a></li>
+            <li><a href="/pages/funnel-product.html" class="icon icon icon-html icon-text-html"
+                    title="funnel-product.html"><span class="name">funnel-product.html</span><span
+                        class="size">24558</span><span class="date">9/1/2021 2:38:15 PM</span></a></li>
+            <li><a href="/pages/funnel.html" class="icon icon icon-html icon-text-html" title="funnel.html"><span
+                        class="name">funnel.html</span><span class="size">19156</span><span class="date">9/22/2021
+                        1:50:46 AM</span></a></li>
+            <li><a href="/pages/help.htm" class="icon icon icon-htm icon-text-html" title="help.htm"><span
+                        class="name">help.htm</span><span class="size">17192</span><span class="date">9/4/2021 3:03:32
+                        PM</span></a></li>
+            <li><a href="/pages/library.html" class="icon icon icon-html icon-text-html" title="library.html"><span
+                        class="name">library.html</span><span class="size">29653</span><span class="date">9/20/2021
+                        11:41:37 PM</span></a></li>
+            <li><a href="/pages/licence.html" class="icon icon icon-html icon-text-html" title="licence.html"><span
+                        class="name">licence.html</span><span class="size">15741</span><span class="date">9/4/2021
+                        3:05:25 PM</span></a></li>
+            <li><a href="/pages/login.html" class="icon icon icon-html icon-text-html" title="login.html"><span
+                        class="name">login.html</span><span class="size">2994</span><span class="date">8/12/2021
+                        11:31:48 PM</span></a></li>
+            <li><a href="/pages/product.html" class="icon icon icon-html icon-text-html" title="product.html"><span
+                        class="name">product.html</span><span class="size">24909</span><span class="date">9/21/2021
+                        12:32:50 AM</span></a></li>
+            <li><a href="/pages/traffic-flow.html" class="icon icon icon-html icon-text-html"
+                    title="traffic-flow.html"><span class="name">traffic-flow.html</span><span
+                        class="size">16075</span><span class="date">9/4/2021 3:04:05 PM</span></a></li>
+            <li><a href="/pages/training.html" class="icon icon icon-html icon-text-html" title="training.html"><span
+                        class="name">training.html</span><span class="size">16307</span><span class="date">9/4/2021
+                        3:03:08 PM</span></a></li>
+            <li><a href="/pages/upgraded-member.html" class="icon icon icon-html icon-text-html"
+                    title="upgraded-member.html"><span class="name">upgraded-member.html</span><span
+                        class="size">0</span><span class="date">6/12/2021 12:17:50 AM</span></a></li>
+            <li><a href="/pages/version.html" class="icon icon icon-html icon-text-html" title="version.html"><span
+                        class="name">version.html</span><span class="size">14486</span><span class="date">9/4/2021
+                        2:01:07 PM</span></a></li>
+        </ul>
+    </div>
+
+</body>
+<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+
+</html>
